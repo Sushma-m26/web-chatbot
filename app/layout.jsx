@@ -1,5 +1,6 @@
 import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const font = Instrument_Sans({ subsets: ["latin"] });
 
@@ -11,7 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>{children}
+          <Analytics />
+          </body>
     </html>
   );
 }
